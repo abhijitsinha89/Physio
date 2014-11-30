@@ -1,0 +1,5 @@
+c:\Users\Abhijit\documents\visual studio 2013\Projects\Physio\DBLayer\bin\Debug\DBLayer.dll
+c:\Users\Abhijit\documents\visual studio 2013\Projects\Physio\DBLayer\bin\Debug\DBLayer.pdb
+c:\Users\Abhijit\documents\visual studio 2013\Projects\Physio\DBLayer\obj\Debug\DBLayer.csprojResolveAssemblyReference.cache
+c:\Users\Abhijit\documents\visual studio 2013\Projects\Physio\DBLayer\obj\Debug\DBLayer.dll
+c:\Users\Abhijit\documents\visual studio 2013\Projects\Physio\DBLayer\obj\Debug\DBLayer.pdb

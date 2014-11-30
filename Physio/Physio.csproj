@@ -1,0 +1,683 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3E4F83A6-7809-4175-87E0-C98470A2DF8D}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Physio</RootNamespace>
+    <AssemblyName>Physio</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.30506.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.30506.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Tracing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Tracing.4.0.30506\lib\net40\System.Web.Http.Tracing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.30506\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Doctor\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Doctor\DoctorAreaRegistration.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\admin\admin.html" />
+    <Content Include="app\admin\admin.js" />
+    <Content Include="app\app.js" />
+    <Content Include="app\common\bootstrap\bootstrap.dialog.js" />
+    <Content Include="app\common\common.js" />
+    <Content Include="app\common\logger.js" />
+    <Content Include="app\common\spinner.js" />
+    <Content Include="app\config.exceptionHandler.js" />
+    <Content Include="app\config.js" />
+    <Content Include="app\config.route.js" />
+    <Content Include="app\dashboard\dashboard.html" />
+    <Content Include="app\dashboard\dashboard.js" />
+    <Content Include="app\layout\shell.js" />
+    <Content Include="app\layout\sidebar.html" />
+    <Content Include="app\layout\sidebar.js" />
+    <Content Include="app\layout\topnav.html" />
+    <Content Include="app\layout\widgetheader.html" />
+    <Content Include="app\services\datacontext.js" />
+    <Content Include="app\services\directives.js" />
+    <Content Include="Areas\Admin\app\admin\admin.html" />
+    <Content Include="Areas\Admin\app\admin\admin.js" />
+    <Content Include="Areas\Admin\app\app.js" />
+    <Content Include="Areas\Admin\app\common\bootstrap\bootstrap.dialog.js" />
+    <Content Include="Areas\Admin\app\common\common.js" />
+    <Content Include="Areas\Admin\app\common\logger.js" />
+    <Content Include="Areas\Admin\app\common\spinner.js" />
+    <Content Include="Areas\Admin\app\config.exceptionHandler.js" />
+    <Content Include="Areas\Admin\app\config.js" />
+    <Content Include="Areas\Admin\app\config.route.js" />
+    <Content Include="Areas\Admin\app\dashboard\dashboard.html" />
+    <Content Include="Areas\Admin\app\dashboard\dashboard.js" />
+    <Content Include="Areas\Admin\app\layout\shell.js" />
+    <Content Include="Areas\Admin\app\layout\sidebar.html" />
+    <Content Include="Areas\Admin\app\layout\sidebar.js" />
+    <Content Include="Areas\Admin\app\layout\topnav.html" />
+    <Content Include="Areas\Admin\app\layout\widgetheader.html" />
+    <Content Include="Areas\Admin\app\services\datacontext.js" />
+    <Content Include="Areas\Admin\app\services\directives.js" />
+    <Content Include="Areas\Admin\Content\bootstrap-theme.css" />
+    <Content Include="Areas\Admin\Content\bootstrap-theme.min.css" />
+    <Content Include="Areas\Admin\Content\bootstrap.css" />
+    <Content Include="Areas\Admin\Content\bootstrap.min.css" />
+    <Content Include="Areas\Admin\Content\customtheme.css" />
+    <Content Include="Areas\Admin\Content\font-awesome.css" />
+    <Content Include="Areas\Admin\Content\font-awesome.min.css" />
+    <Content Include="Areas\Admin\Content\ie10mobile.css" />
+    <Content Include="Areas\Admin\Content\images\AngularJS-small.png" />
+    <Content Include="Areas\Admin\Content\images\breezelogo.png" />
+    <Content Include="Areas\Admin\Content\images\icon.png" />
+    <Content Include="Areas\Admin\Content\Site.css" />
+    <Content Include="Areas\Admin\Content\styles.css" />
+    <Content Include="Areas\Admin\Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Areas\Admin\Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Areas\Admin\Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Areas\Admin\Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Areas\Admin\Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Areas\Admin\Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Areas\Admin\Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Areas\Admin\Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Areas\Admin\Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Areas\Admin\Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Areas\Admin\Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Areas\Admin\Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Areas\Admin\Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Areas\Admin\Content\themes\base\jquery-ui.css" />
+    <Content Include="Areas\Admin\Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Areas\Admin\Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Areas\Admin\Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Areas\Admin\Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Areas\Admin\Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Areas\Admin\Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Areas\Admin\Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Areas\Admin\Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Areas\Admin\Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Areas\Admin\Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Areas\Admin\Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Areas\Admin\Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Areas\Admin\Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Areas\Admin\Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Areas\Admin\Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Areas\Admin\Content\toastr.css" />
+    <Content Include="Areas\Admin\Content\toastr.min.css" />
+    <Content Include="Areas\Admin\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\Admin\Scripts\angular-animate.js" />
+    <Content Include="Areas\Admin\Scripts\angular-animate.min.js" />
+    <Content Include="Areas\Admin\Scripts\angular-mocks.js" />
+    <Content Include="Areas\Admin\Scripts\angular-route.js" />
+    <Content Include="Areas\Admin\Scripts\angular-route.min.js" />
+    <Content Include="Areas\Admin\Scripts\angular-sanitize.js" />
+    <Content Include="Areas\Admin\Scripts\angular-sanitize.min.js" />
+    <Content Include="Areas\Admin\Scripts\angular.js" />
+    <Content Include="Areas\Admin\Scripts\angular.min.js" />
+    <Content Include="Areas\Admin\Scripts\bootstrap.js" />
+    <Content Include="Areas\Admin\Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Admin\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\Admin\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\Admin\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Areas\Admin\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Areas\Admin\Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Areas\Admin\Scripts\jquery-2.1.1.js" />
+    <Content Include="Areas\Admin\Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Areas\Admin\Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Areas\Admin\Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Areas\Admin\Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Areas\Admin\Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Areas\Admin\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Areas\Admin\Scripts\jquery.validate.js" />
+    <Content Include="Areas\Admin\Scripts\jquery.validate.min.js" />
+    <Content Include="Areas\Admin\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Areas\Admin\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Areas\Admin\Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Areas\Admin\Scripts\knockout-2.2.0.js" />
+    <Content Include="Areas\Admin\Scripts\modernizr-2.6.2.js" />
+    <Content Include="Areas\Admin\Scripts\moment-with-langs.js" />
+    <Content Include="Areas\Admin\Scripts\moment-with-langs.min.js" />
+    <Content Include="Areas\Admin\Scripts\moment.js" />
+    <Content Include="Areas\Admin\Scripts\moment.min.js" />
+    <Content Include="Areas\Admin\Scripts\spin.js" />
+    <Content Include="Areas\Admin\Scripts\spin.min.js" />
+    <Content Include="Areas\Admin\Scripts\toastr.js" />
+    <Content Include="Areas\Admin\Scripts\toastr.min.js" />
+    <Content Include="Areas\Admin\Scripts\ui-bootstrap-tpls-0.10.0.js" />
+    <Content Include="Areas\Admin\Scripts\ui-bootstrap-tpls-0.10.0.min.js" />
+    <None Include="Areas\Admin\Scripts\_references.js" />
+    <Content Include="Areas\Doctor\app\admin\admin.html" />
+    <Content Include="Areas\Doctor\app\admin\admin.js" />
+    <Content Include="Areas\Doctor\app\app.js" />
+    <Content Include="Areas\Doctor\app\common\bootstrap\bootstrap.dialog.js" />
+    <Content Include="Areas\Doctor\app\common\common.js" />
+    <Content Include="Areas\Doctor\app\common\logger.js" />
+    <Content Include="Areas\Doctor\app\common\spinner.js" />
+    <Content Include="Areas\Doctor\app\config.exceptionHandler.js" />
+    <Content Include="Areas\Doctor\app\config.js" />
+    <Content Include="Areas\Doctor\app\config.route.js" />
+    <Content Include="Areas\Doctor\app\dashboard\dashboard.html" />
+    <Content Include="Areas\Doctor\app\dashboard\dashboard.js" />
+    <Content Include="Areas\Doctor\app\layout\shell.js" />
+    <Content Include="Areas\Doctor\app\layout\sidebar.html" />
+    <Content Include="Areas\Doctor\app\layout\sidebar.js" />
+    <Content Include="Areas\Doctor\app\layout\topnav.html" />
+    <Content Include="Areas\Doctor\app\layout\widgetheader.html" />
+    <Content Include="Areas\Doctor\app\services\datacontext.js" />
+    <Content Include="Areas\Doctor\app\services\directives.js" />
+    <Content Include="Areas\Doctor\Content\bootstrap-theme.css" />
+    <Content Include="Areas\Doctor\Content\bootstrap-theme.min.css" />
+    <Content Include="Areas\Doctor\Content\bootstrap.css" />
+    <Content Include="Areas\Doctor\Content\bootstrap.min.css" />
+    <Content Include="Areas\Doctor\Content\customtheme.css" />
+    <Content Include="Areas\Doctor\Content\font-awesome.css" />
+    <Content Include="Areas\Doctor\Content\font-awesome.min.css" />
+    <Content Include="Areas\Doctor\Content\ie10mobile.css" />
+    <Content Include="Areas\Doctor\Content\images\AngularJS-small.png" />
+    <Content Include="Areas\Doctor\Content\images\breezelogo.png" />
+    <Content Include="Areas\Doctor\Content\images\icon.png" />
+    <Content Include="Areas\Doctor\Content\Site.css" />
+    <Content Include="Areas\Doctor\Content\styles.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\jquery-ui.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Areas\Doctor\Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Areas\Doctor\Content\toastr.css" />
+    <Content Include="Areas\Doctor\Content\toastr.min.css" />
+    <Content Include="Areas\Doctor\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\Doctor\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\Doctor\Scripts\angular-animate.min.js.map" />
+    <Content Include="Areas\Doctor\Scripts\angular-route.min.js.map" />
+    <Content Include="Areas\Doctor\Scripts\angular-sanitize.min.js.map" />
+    <Content Include="Areas\Doctor\Scripts\angular.min.js.map" />
+    <Content Include="Areas\Doctor\Scripts\jquery-2.1.1.min.map" />
+    <Content Include="Areas\Doctor\Scripts\toastr.min.js.map" />
+    <None Include="Areas\Doctor\Scripts\_references.js" />
+    <Content Include="Areas\Doctor\Scripts\angular-animate.js" />
+    <Content Include="Areas\Doctor\Scripts\angular-animate.min.js" />
+    <Content Include="Areas\Doctor\Scripts\angular-mocks.js" />
+    <Content Include="Areas\Doctor\Scripts\angular-route.js" />
+    <Content Include="Areas\Doctor\Scripts\angular-route.min.js" />
+    <Content Include="Areas\Doctor\Scripts\angular-sanitize.js" />
+    <Content Include="Areas\Doctor\Scripts\angular-sanitize.min.js" />
+    <Content Include="Areas\Doctor\Scripts\angular.js" />
+    <Content Include="Areas\Doctor\Scripts\angular.min.js" />
+    <Content Include="Areas\Doctor\Scripts\bootstrap.js" />
+    <Content Include="Areas\Doctor\Scripts\bootstrap.min.js" />
+    <None Include="Areas\Doctor\Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Areas\Doctor\Scripts\jquery-2.1.1.js" />
+    <Content Include="Areas\Doctor\Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Areas\Doctor\Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Areas\Doctor\Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Areas\Doctor\Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Areas\Doctor\Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Areas\Doctor\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Areas\Doctor\Scripts\jquery.validate.js" />
+    <Content Include="Areas\Doctor\Scripts\jquery.validate.min.js" />
+    <Content Include="Areas\Doctor\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Areas\Doctor\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Areas\Doctor\Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Areas\Doctor\Scripts\knockout-2.2.0.js" />
+    <Content Include="Areas\Doctor\Scripts\modernizr-2.6.2.js" />
+    <Content Include="Areas\Doctor\Scripts\moment-with-langs.js" />
+    <Content Include="Areas\Doctor\Scripts\moment-with-langs.min.js" />
+    <Content Include="Areas\Doctor\Scripts\moment.js" />
+    <Content Include="Areas\Doctor\Scripts\moment.min.js" />
+    <Content Include="Areas\Doctor\Scripts\spin.js" />
+    <Content Include="Areas\Doctor\Scripts\spin.min.js" />
+    <Content Include="Areas\Doctor\Scripts\toastr.js" />
+    <Content Include="Areas\Doctor\Scripts\toastr.min.js" />
+    <Content Include="Areas\Doctor\Scripts\ui-bootstrap-tpls-0.10.0.js" />
+    <Content Include="Areas\Doctor\Scripts\ui-bootstrap-tpls-0.10.0.min.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\customtheme.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\ie10mobile.css" />
+    <Content Include="Content\images\AngularJS-small.png" />
+    <Content Include="Content\images\breezelogo.png" />
+    <Content Include="Content\images\icon.png" />
+    <Content Include="Content\styles.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Scripts\angular-animate.js" />
+    <Content Include="Scripts\angular-animate.min.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-sanitize.js" />
+    <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="Scripts\angular-sanitize.min.js.map" />
+    <Content Include="Areas\Admin\Content\bootstrap-theme.css.map" />
+    <Content Include="Areas\Admin\Content\bootstrap.css.map" />
+    <Content Include="Areas\Admin\Content\toastr.less" />
+    <Content Include="Areas\Admin\Content\toastr.scss" />
+    <Content Include="Areas\Admin\Scripts\angular-animate.min.js.map" />
+    <Content Include="Areas\Admin\Scripts\angular-route.min.js.map" />
+    <Content Include="Areas\Admin\Scripts\angular-sanitize.min.js.map" />
+    <Content Include="Areas\Admin\Scripts\angular.min.js.map" />
+    <Content Include="Areas\Admin\Scripts\jquery-2.1.1.min.map" />
+    <Content Include="Areas\Admin\Scripts\toastr.min.js.map" />
+    <Content Include="Areas\Doctor\Views\Web.config" />
+    <Content Include="Areas\Doctor\Content\bootstrap-theme.css.map" />
+    <Content Include="Areas\Doctor\Content\bootstrap.css.map" />
+    <Content Include="Areas\Doctor\Content\toastr.less" />
+    <Content Include="Areas\Doctor\Content\toastr.scss" />
+    <Content Include="Areas\Doctor\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Doctor\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\Doctor\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\Doctor\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Doctor\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Doctor\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Areas\Doctor\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Doctor\Views\Shared\_DoctorLayout.cshtml" />
+    <Content Include="Areas\Doctor\Views\Home\Index.cshtml" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment-with-langs.js" />
+    <Content Include="Scripts\moment-with-langs.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\spin.js" />
+    <Content Include="Scripts\spin.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-0.10.0.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-0.10.0.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\toastr.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Doctor\Models\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>39452</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:38699/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
