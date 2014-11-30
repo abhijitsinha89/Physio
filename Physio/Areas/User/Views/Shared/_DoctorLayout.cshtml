@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .ng-hide {
+            display: none !important;
+        }
+    </style>
+    <title data-ng-bind="title">Doctor View</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+
+    <script src="/Areas/Doctor/scripts/angular.min.js"></script>
+    <script src="/Areas/Doctor/Scripts/angular-animate.min.js"></script>
+    <script src="/Areas/Doctor/Scripts/angular-route.min.js"></script>
+    <script src="/Areas/Doctor/Scripts/angular-resource.min.js"></script>
+    <script src="/Areas/Doctor/Scripts/angular-sanitize.min.js"></script>
+
+    <link href="/Areas/Doctor/content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Areas/Doctor/content/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Areas/Doctor/content/toastr.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        Loaded
+        @RenderBody()
+    </div>
+
+    <!-- Vendor Scripts -->
+    <script src="/Areas/Doctor/Scripts/jquery-2.1.1.min.js"></script>
+    <script src="/Areas/Doctor/Scripts/toastr.min.js"></script>
+    <script src="/Areas/Doctor/Scripts/bootstrap.min.js"></script>
+    <script src="/Areas/Doctor/Scripts/moment.min.js"></script>
+    <script src="/Areas/Doctor/Scripts/ng-map.min.js"></script>
+    <script src="/Areas/Doctor/Scripts/ui-bootstrap-tpls-0.10.0.min.js"></script>
+
+
+    <!-- Bootstrapping -->
+    <script src="/Areas/Doctor/app/app.js"></script>
+    <script src="/Areas/Doctor/app/config.js"></script>
+    <script src="/Areas/Doctor/app/config.exceptionHandler.js"></script>
+    <script src="/Areas/Doctor/app/config.route.js"></script>
+
+    <!-- common Modules -->
+    <script src="/Areas/Doctor/app/common/common.js"></script>
+    <script src="/Areas/Doctor/app/common/logger.js"></script>
+
+    <!-- app -->
+    <script src="/Areas/Doctor/app/admin/admin.js"></script>
+    <script src="/Areas/Doctor/app/dashboard/dashboard.js"></script>
+    <script src="/Areas/Doctor/app/layout/shell.js"></script>
+
+    <!-- app Services -->
+    <script src="/Areas/Doctor/app/services/datacontext.js"></script>
+    <script src="/Areas/Doctor/app/services/directives.js"></script>
+</body>
+</html>
