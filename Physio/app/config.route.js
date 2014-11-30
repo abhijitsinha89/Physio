@@ -22,21 +22,61 @@
             {
                 url: '/',
                 config: {
-                    templateUrl: 'app/dashboard/dashboard.html',
-                    title: 'dashboard',
+                    templateUrl: '/app/home/home.html',
+                    title: 'home',
                     settings: {
                         nav: 1,
-                        content: '<i class="fa fa-dashboard"></i> Dashboard'
+                        content: '<i class="fa fa-dashboard"></i> Home'
                     }
                 }
             }, {
-                url: '/admin',
+                url: '/book',
                 config: {
-                    title: 'admin',
-                    templateUrl: 'app/admin/admin.html',
+                    title: 'book',
+                    templateUrl: '/app/book/book.html',
                     settings: {
                         nav: 2,
-                        content: '<i class="fa fa-lock"></i> Admin'
+                        content: '<i class="fa fa-lock"></i> Book'
+                    }
+                }
+            }, {
+                url: '/about',
+                config: {
+                    title: 'about',
+                    templateUrl: '/app/about/about.html',
+                    settings: {
+                        nav: 3,
+                        content: '<i class="fa fa-lock"></i> About'
+                    }
+                }
+            }, {
+                url: '/contact',
+                config: {
+                    title: 'contact',
+                    templateUrl: '/app/contact/contact.html',
+                    settings: {
+                        nav: 4,
+                        content: '<i class="fa fa-lock"></i> Contact'
+                    }
+                }
+            }, {
+                url: '/payment',
+                config: {
+                    title: 'book',
+                    templateUrl: '/app/payment/payment.html',
+                    settings: {
+                        nav: 5,
+                        content: '<i class="fa fa-lock"></i> Payment'
+                    }
+                }
+            }, {
+                url: '/policies',
+                config: {
+                    title: 'book',
+                    templateUrl: '/app/policies/policies.html',
+                    settings: {
+                        nav: 6,
+                        content: '<i class="fa fa-lock"></i> Policies'
                     }
                 }
             }

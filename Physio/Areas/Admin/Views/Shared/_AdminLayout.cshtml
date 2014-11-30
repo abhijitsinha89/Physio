@@ -8,16 +8,21 @@
             display: none !important;
         }
     </style>
-    <title data-ng-bind="title">Hot Towel Angular</title>
+    <title data-ng-bind="title">Admin View</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-    <link href="/Areas/Admin/content/ie10mobile.css" rel="stylesheet" />
+    
+    <script src="/Areas/Admin/scripts/angular.min.js"></script>
+    <script src="/Areas/Admin/Scripts/angular-animate.min.js"></script>
+    <script src="/Areas/Admin/Scripts/angular-route.min.js"></script>
+    <script src="/Areas/Admin/Scripts/angular-resource.min.js"></script>
+    <script src="/Areas/Admin/Scripts/angular-sanitize.min.js"></script>
+    
     <link href="/Areas/Admin/content/bootstrap.min.css" rel="stylesheet" />
     <link href="/Areas/Admin/content/font-awesome.min.css" rel="stylesheet" />
-    <link href="/Areas/Admin/content/toastr.css" rel="stylesheet" />
-    <link href="/Areas/Admin/content/customtheme.css" rel="stylesheet">
-    <link href="/Areas/Admin/content/styles.css" rel="stylesheet" />
+    <link href="/Areas/Admin/content/toastr.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
 </head>
 <body>
     <div>
@@ -25,19 +30,13 @@
         @RenderBody()
     </div>
 
-    <span data-cc-scroll-to-top></span>
-    
     <!-- Vendor Scripts -->
-    <script src="/Areas/Admin/scripts/jquery-2.1.1.js"></script>
-    <script src="/Areas/Admin/scripts/angular.js"></script>
-    <script src="/Areas/Admin/scripts/angular-animate.js"></script>
-    <script src="/Areas/Admin/scripts/angular-route.js"></script>
-    <script src="/Areas/Admin/scripts/angular-sanitize.js"></script>
-    <script src="/Areas/Admin/scripts/bootstrap.js"></script>
-    <script src="/Areas/Admin/scripts/toastr.js"></script>
-    <script src="/Areas/Admin/scripts/moment.js"></script>
-    <script src="/Areas/Admin/scripts/ui-bootstrap-tpls-0.10.0.js"></script>
-    <script src="/Areas/Admin/scripts/spin.js"></script>
+    <script src="/Areas/Admin/Scripts/jquery-2.1.1.min.js"></script>
+    <script src="/Areas/Admin/Scripts/toastr.min.js"></script>
+    <script src="/Areas/Admin/Scripts/bootstrap.min.js"></script>
+    <script src="/Areas/Admin/Scripts/moment.min.js"></script>
+    <script src="/Areas/Admin/Scripts/ng-map.min.js"></script>
+    <script src="/Areas/Admin/Scripts/ui-bootstrap-tpls-0.10.0.min.js"></script>
 
 
     <!-- Bootstrapping -->
@@ -49,16 +48,11 @@
     <!-- common Modules -->
     <script src="/Areas/Admin/app/common/common.js"></script>
     <script src="/Areas/Admin/app/common/logger.js"></script>
-    <script src="/Areas/Admin/app/common/spinner.js"></script>
-
-    <!-- common.bootstrap Modules -->
-    <script src="/Areas/Admin/app/common/bootstrap/bootstrap.dialog.js"></script>
 
     <!-- app -->
     <script src="/Areas/Admin/app/admin/admin.js"></script>
     <script src="/Areas/Admin/app/dashboard/dashboard.js"></script>
     <script src="/Areas/Admin/app/layout/shell.js"></script>
-    <script src="/Areas/Admin/app/layout/sidebar.js"></script>
 
     <!-- app Services -->
     <script src="/Areas/Admin/app/services/datacontext.js"></script>

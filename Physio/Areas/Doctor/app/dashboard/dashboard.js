@@ -1,39 +1,26 @@
 ﻿(function () {
     'use strict';
     var controllerId = 'dashboard';
-    angular.module('app').controller(controllerId, ['common', 'datacontext', dashboard]);
+    angular.module('app').controller(controllerId, ['$timeout','common', 'datacontext', dashboard]);
 
-    function dashboard(common, datacontext) {
+    function dashboard($timeout , common, datacontext) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
-
+        
         var vm = this;
-        vm.news = {
-            title: 'Hot Towel Angular',
-            description: 'Hot Towel Angular is a SPA template for Angular developers.'
-        };
-        vm.messageCount = 0;
-        vm.people = [];
-        vm.title = 'Dashboard';
-
+        vm.counter = 0;
+        vm.date = new Date();
         activate();
 
         function activate() {
-            var promises = [getMessageCount(), getPeople()];
-            common.activateController(promises, controllerId)
-                .then(function () { log('Activated Dashboard View'); });
-        }
 
-        function getMessageCount() {
-            return datacontext.getMessageCount().then(function (data) {
-                return vm.messageCount = data;
-            });
         }
-
-        function getPeople() {
-            return datacontext.getPeople().then(function (data) {
-                return vm.people = data;
-            });
+      
+        vm.onTimeout = function () {
+            vm.counter++;
+            vm.date = new Date();
+            mytimeout = $timeout(vm.onTimeout, 1000);
         }
+        var mytimeout = $timeout(vm.onTimeout, 1000);
     }
 })();

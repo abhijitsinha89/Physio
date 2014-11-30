@@ -8,36 +8,35 @@
             display: none !important;
         }
     </style>
-    <title data-ng-bind="title">Hot Towel Angular</title>
+    <title data-ng-bind="title">Doctor View</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-    <link href="/Areas/Doctor/content/ie10mobile.css" rel="stylesheet" />
+
+    <script src="/Areas/Doctor/scripts/angular.min.js"></script>
+    <script src="/Areas/Doctor/Scripts/angular-animate.min.js"></script>
+    <script src="/Areas/Doctor/Scripts/angular-route.min.js"></script>
+    <script src="/Areas/Doctor/Scripts/angular-resource.min.js"></script>
+    <script src="/Areas/Doctor/Scripts/angular-sanitize.min.js"></script>
+
     <link href="/Areas/Doctor/content/bootstrap.min.css" rel="stylesheet" />
     <link href="/Areas/Doctor/content/font-awesome.min.css" rel="stylesheet" />
-    <link href="/Areas/Doctor/content/toastr.css" rel="stylesheet" />
-    <link href="/Areas/Doctor/content/customtheme.css" rel="stylesheet">
-    <link href="/Areas/Doctor/content/styles.css" rel="stylesheet" />
+    <link href="/Areas/Doctor/content/toastr.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
 </head>
 <body>
     <div>
-       Doctor Loaded
+        Loaded
         @RenderBody()
     </div>
 
-    <span data-cc-scroll-to-top></span>
-    
     <!-- Vendor Scripts -->
-    <script src="/Areas/Doctor/scripts/jquery-2.1.1.js"></script>
-    <script src="/Areas/Doctor/scripts/angular.js"></script>
-    <script src="/Areas/Doctor/scripts/angular-animate.js"></script>
-    <script src="/Areas/Doctor/scripts/angular-route.js"></script>
-    <script src="/Areas/Doctor/scripts/angular-sanitize.js"></script>
-    <script src="/Areas/Doctor/scripts/bootstrap.js"></script>
-    <script src="/Areas/Doctor/scripts/toastr.js"></script>
-    <script src="/Areas/Doctor/scripts/moment.js"></script>
-    <script src="/Areas/Doctor/scripts/ui-bootstrap-tpls-0.10.0.js"></script>
-    <script src="/Areas/Doctor/scripts/spin.js"></script>
+    <script src="/Areas/Doctor/Scripts/jquery-2.1.1.min.js"></script>
+    <script src="/Areas/Doctor/Scripts/toastr.min.js"></script>
+    <script src="/Areas/Doctor/Scripts/bootstrap.min.js"></script>
+    <script src="/Areas/Doctor/Scripts/moment.min.js"></script>
+    <script src="/Areas/Doctor/Scripts/ng-map.min.js"></script>
+    <script src="/Areas/Doctor/Scripts/ui-bootstrap-tpls-0.10.0.min.js"></script>
 
 
     <!-- Bootstrapping -->
@@ -49,16 +48,11 @@
     <!-- common Modules -->
     <script src="/Areas/Doctor/app/common/common.js"></script>
     <script src="/Areas/Doctor/app/common/logger.js"></script>
-    <script src="/Areas/Doctor/app/common/spinner.js"></script>
-
-    <!-- common.bootstrap Modules -->
-    <script src="/Areas/Doctor/app/common/bootstrap/bootstrap.dialog.js"></script>
 
     <!-- app -->
     <script src="/Areas/Doctor/app/admin/admin.js"></script>
     <script src="/Areas/Doctor/app/dashboard/dashboard.js"></script>
     <script src="/Areas/Doctor/app/layout/shell.js"></script>
-    <script src="/Areas/Doctor/app/layout/sidebar.js"></script>
 
     <!-- app Services -->
     <script src="/Areas/Doctor/app/services/datacontext.js"></script>
